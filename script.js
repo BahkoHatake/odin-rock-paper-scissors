@@ -33,29 +33,43 @@ function playRound(playerSelect, compSelect){
     }
     else{
         return("It is a draw!")
-    }   
-}
-function game(){
-    let counter1=0
-    let counter2=0
-    for (let i=0; i<5;i++){
-        let compSelect=getComputerChoice()
-        let playerSelect=prompt("Chouse ")
-        let round=playRound(playerSelect,compSelect)
-        console.log(round)
-        let winner=round.charAt(4)
-        if (winner=="w"){
-            counter1++
-        }
-        else if (winner=="l"){
-            counter2++    
-    }
-    }
-    if(counter1>counter2){
-        return("covek je pobedio")
-    }
-    else if(counter1<counter2){
-        "Masina je pobedila"
-    }
-}
+    }   }
 
+let counter1=0;
+let counter2=0;
+const winner=document.querySelector(".winner");
+const p1=document.querySelector(".p1");
+const p2=document.querySelector(".p2");
+const div=document.querySelector(".display");
+const buttons=document.querySelectorAll(".container button");
+
+const fButton=document.createElement("button")
+fButton.classList.add("b1")
+fButton.textContent="Try again"
+fButton.addEventListener("click",()=>{
+    location.reload() 
+})
+
+const finnish=document.querySelector(".finnish")
+
+
+buttons.forEach(button=>button.addEventListener("click", () =>{
+    let round=playRound(button.className,getComputerChoice())
+    div.textContent=round
+    if(round.slice(4,5)=="w"){
+        counter1++
+    }
+    else if (round.slice(4,5)=="l"){
+        counter2++
+    }
+    p1.textContent= String(counter1)
+    p2.textContent= String(counter2)
+    if(counter1==5){
+        winner.textContent="THE WINNER IS PLAYER ONE"
+        finnish.appendChild(fButton)
+    }
+    else if(counter2==5){
+        winner.textContent="THE WINNER IS COMPUTER"
+        finnish.appendChild(fButton)
+    }   
+}))

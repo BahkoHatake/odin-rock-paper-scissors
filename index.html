@@ -5,9 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>odin-rock-paper-scissors</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <h1>ROCK PAPER SCISSORS!!!</h1>
+    <h4>Pres any button to start the game!</h4>
+    <div class="screen">
+        <div class="container">
+            <button class="rock">Rock</button>
+            <button class="paper">Paper</button>
+            <button class="scissors">Scissors</button>
+        </div>
+        <div class="display"></div>
+        <div class="rezultat">
+            <div class="prvi">
+                <div>Player Score</div>
+                <div class="p1">0</div>
+            </div>
+            <div class="drugi">
+                <div>AI Score</div>
+                <div class="p2">0</div>
+            </div>
+        </div>
+        <div class="finnish">
+            <div class="winner"></div>
+        </div>
+    </div>
 </body>
 </html>

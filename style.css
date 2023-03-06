@@ -1,0 +1,129 @@
+
+body{
+    height:800px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: monaco, monospace;
+}
+h1{
+    text-align: center;
+    font-size: xx-large;
+}
+h4{
+    margin-top:70px;
+}
+.screen{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    gap: 70px;
+    width: 800px;
+    height: 550px;
+    margin-top: 30px;
+    --b: 5px;  /* border thickness */
+    --s: 30px; /* size of the dashes */
+    --c1: #215A6D;
+    --c2: #92C7A3;
+    aspect-ratio: 1;
+    position: relative;
+    
+}
+.screen::before {
+    content:"";
+    position: absolute;
+    inset: 0;
+    padding: var(--b);
+    background: 
+      repeating-conic-gradient(var(--c1) 0 25%,var(--c2) 0 50%) 
+      0 0/var(--s) var(--s) round;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+.display{
+    width: 400px;
+    height: 50px;
+    text-align: center;
+}
+.container{
+    display: flex;
+    gap:26px;
+}
+.rezultat{
+    display: flex;
+    gap:300px
+}
+.winner{
+    width: 400px;
+    height: 50px;
+    text-align: center;
+}
+button{
+      appearance: button;
+      background-color: #000;
+      background-image: none;
+      border: 1px solid #000;
+      border-radius: 4px;
+      box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      margin: 0 5px 10px 0;
+      overflow: visible;
+      padding: 12px 40px;
+      text-align: center;
+      text-transform: none;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    
+    button:focus {
+      text-decoration: none;
+    }
+    
+    button:hover {
+      text-decoration: none;
+    }
+    
+    button:active {
+      box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+      outline: 0;
+    }
+    
+    button:not([disabled]):active {
+      box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+      transform: translate(2px, 2px);
+    }
+    
+    @media (min-width: 768px) {
+      .button-50 {
+        padding: 12px 50px;
+      }
+    }
+
+.p1{
+    text-align: center;
+    font-size: x-large;
+}
+.p2{
+    text-align: center;
+    font-size: x-large;
+}
+.finnish{
+    display: flex;
+    flex-direction: column;
+}
